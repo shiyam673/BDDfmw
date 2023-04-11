@@ -2,9 +2,12 @@ pipeline {
  agent any
 
  stages {
-        
-
- stage('Build') {
+        stage ('checkOut') {
+            steps  {
+                     git branch: 'main ', credentialsId: 'Git' , url: 'https://github.com/Aravindk1712/aaaabbbbcc/'
+                   }
+                   }
+       stage('Build') {
             steps {
                 bat 'mvn clean test'
             }
