@@ -1,19 +1,12 @@
 pipeline {
-    agent any
+ agent any
 
- 
+ stages {
+        
 
-    stages {
-        stage ('checkOut') {
-            steps  {
-                     git branch: 'master', credentialsId: 'Git' , url: 'https://github.com/shiyam673/BDDfmw/'
-                   }
-
- 
-
-        stage('Jar Creation') {
+ stage('Build') {
             steps {
-                bat 'mvn clean verify'
+                bat 'mvn clean test'
             }
             }
             
