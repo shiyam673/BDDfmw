@@ -13,7 +13,7 @@ pipeline {
 
         stage('Jar Creation') {
             steps {
-                bat 'mvn clean package assembly:single -Dmaven.test.skip=true'
+                bat 'mvn clean verify'
             }
             }
             
